@@ -1,0 +1,192 @@
+\documentclass[8pt]{article}
+\usepackage{lingmacros}
+\usepackage{tree-dvips}
+\usepackage{amsmath}
+\usepackage{nccmath}
+\usepackage{mathtools}
+\usepackage{paracol}
+\usepackage{amssymb}
+\usepackage[margin=0.2in]{geometry}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arcsc}
+\begin{document}
+    \section*{Discrete Math - CS 2100 SP2022}
+    \begin{paracol}{3}
+        \begin{tabular}{|l|l|l|l|}
+            \hline
+            & Logical                 & Sets                      & Boolean             \\ \hline
+            Variables        & p,q,r                   & A,B,C                     & a,b,c               \\ \hline
+            Operations       & $\wedge , \vee , \neg $ & $ \cap. \cup, \backprime     $ & $ \cdot, + ,\prime$ \\ \hline
+            Special Elements & c, t                    & $\emptyset, U$            & 0, 1                \\ \hline
+        \end{tabular}
+        \\
+        \begin{tabular}{|l|l|l|}
+            \hline
+            p & q & p\textrightarrow q \\ \hline
+            0 & 0 & 1                  \\ \hline
+            0 & 1 & 1                  \\ \hline
+            1 & 0 & 0                  \\ \hline
+            1 & 1 & 1                  \\  \hline
+        \end{tabular}
+        Opposite of $p \rightarrow q = p \wedge \neg q$
+        \subsection*{Test 5 Theorems}
+        \begin{itemize}[noitemsep]
+            \item graph, vertex, edge — A graph is a set of vertices (or nodes) and edges such that each edge is associated with one or two vertices (called is endpoints). In an undirected graph, an edge with endpoints (vertices) a and b can be represented as {a, b}. In a directed graph, a (directed) edge from vertex a to vertex b can be represented (a, b), noting the significance of the ordered pair.
+            \item incident — An edge is incident with a vertex v, if v is an endpoint of the edge.
+            \item degree — The degree of a vertex v is the number of times v appears as an endpoint of an edge in the graph, denoted deg(v).
+            \item loop — A loop is an edge that has only one endpoint, joining a vertex to itself.
+            \item parallel edge — A parallel edge is an edge with the same endpoints as another (parallel) edge. Such edges are also called multiple edges.
+            \item  walk — A walk is a sequence of alternating vertices and edges, which begins and ends with vertices and where each edge in the sequence lies between its endpoints. The number of edges in the walk is the walk length. If the beginning and ending vertex are the same, then the walk is closed. If the walk length is 0, then the walk is trivial.
+            \item  trail — A trail is a walk with no repeated edges.
+            \item  Eulerian trail — A Eulerian trail is a trail that uses every edge in a graph. (start with a vertex with an odd degree)
+            \item  path — A path is a walk with no repeated vertices.
+            \item  circuit — A circuit is a closed trail; i.e., a walk with no repeated edges that begins and ends at the same vertex. A circuit with one vertex and no edges is trivial.
+            \switchcolumn
+            \item  Eulerian circuit — An Eulerian circuit is a circuit that uses every edge in a graph. A graph is called Eulerian if it has an Eulerian circuit.
+            \item  cycle — A cycle is a nontrivial circuit in which the only repeated vertex is the one at the beginning/end.
+            \item  simple graph — A simple graph is a graph with no loops and no parallel edges.
+            \item  connected graph — A graph is connected if there is a walk between any two pair of distinct vertices.
+            \item subgraph — A graph H is subgraph of a graph G if all vertices and edges in H are also in G.
+            \item  connected component — A connected subgraph H of graph G is a connected component of G if no other connected subgraph of G containing H exists.
+            \item  weighted graph — A graph in which each edge has an associated numerical value (called a weight) is a weighted graph.
+            \item  tree, leaf — A tree is a connected, simple graph with no cycles. The vertices in the graph with degree 1 are called leaves.
+            \item  spanning tree — A spanning tree is a tree that it is a subgraph of a simple, connected graph. If the graph is weighted and has no other spanning tree with a smaller total weight, then the spanning tree is called minimal.
+            \item  isomorphic graphs — Two simple graphs G and H are isomorphic if there is an invertible function f from the vertices of G to the vertices of H such that {a, b} is an edge in G if and only if {f(a), f(b)} is an edge in H. The function f is called an isomorphism. Isomorphic graphs need to have the same number of edges, and node degrees that match.
+            \item  degree sequence — The degree sequence of a graph is the list of degrees of the vertices of the graph, from largest degree to smallest.
+            \item  planar graph — A simple, connected graph is planar if there is a way to draw on a plane such that no edges cross. Such a drawing is called an embedding of the graph in the plane.
+            \item  face — A face of a planar graph is a region created by the embedding when drawn on the plane with no edges crossing.
+            \item  game state graph — A graph of all the states in a game (one- or two-player), where the edges represent allowed moves
+            \switchcolumn
+            \item  win set — In a game state graph, the nodes in the graph where moving to that node means you win.
+            \item   Eulerian Graph: every node is even degree
+            \item  kernel — In a game state graph, a subset of nodes such that: 1) the nodes in the win set are also in the kernel; 2) all nodes in the kernel points only to nodes outside the kernel; 3) all nodes outside the kernel have an edge to a node in the kernel.
+            \item  Eulerian Formula: F + V = E + 2
+            \item  Minimum spanning tree: The tree that visits all of the nodes once using the least costly edge.
+        \end{itemize}
+        \subsection*{Test 4}
+        \begin{itemize}[noitemsep]
+            \item partial order — A relation R on the set A is a partial order on A if it is reflexive, antisymmetric, and transitive.
+            \item  partial order — A relation R on the set A is a partial order on A if it is reflexive, antisymmetric, and transitive.
+            \item  Hasse diagram — A Hasse diagram is a simplified arrow diagram for illustrating a relation that is a partial order. Since the relation is reflective, loops are omitted. Since the relation is antisymmetric, arrows would go in only one direction, so lines are used instead. Since the relation is transitive, lines are drawn from a to b and b to c, but the extra line from a to c is omitted.
+            \item  irreflexive — A relation R on set A is irreflexive if (a, a) $\notin$ R for all a $\in$ A.
+            \item  strict partial order — A relation R on the set A is a strict partial order on A if it is irreflexive, antisymmetric, and transitive.
+            \item  total order — A relation R on the set A is a total order on A if it is a partial order on A and also satisfies the property: $\forall$ a, b $\in$ A, if a $\neq$ b, either (a, b) $\in$ R or (b, a) $\in$ R. Similarly, a relation is a strict total order if it is a strict partial order and also satisfies the same property.
+            \item  reflexive - (a,a) for all a $\in$ A
+            \item  transitive - (a,a),(b,b),(a,b) for all a,b $\in$ A
+        \end{itemize}
+        \switchcolumn
+        \subsection*{Test 3}
+        \begin{itemize}[noitemsep]
+            \item Cartesian product — Given sets S1, S2, \ldots, Sn, the Cartesian product is the set of all n-tuples (x1, x2, ..., xn) such that x1 $\in$ S1, x2 $\in$ S2, and so on, written S1 x S2 x ... x Sn. E.g., {1, 2} x {a, b} = {(1, a), (1, b), (2, a), (2, b)}. Note that when all Si are the same set, the shorthand Sn may be used in place of S1 x S2 x ... x Sn.
+            \item power set — Given a set A, the power set of A is the set of all subsets of A, written P(A).
+            \item set partition — Given a set A, a partition of A is a set {S1, S2, \ldots, Sn}, where each Si is a non-empty subset of A and where none of the subsets overlap and every element of A is in some subset Si.
+            \item subset — Set A is a subset of set B if every element in A is also a member of B, written A $\subseteq$ B. I.e., $\forall$ x, x $\in$ A → x $\in$ B.
+        \end{itemize}
+        \subsection*{Etc.}
+        Write an element wise proof that if $A \subseteq C$ then $P(A) \subseteq P(C)$ \\
+        let $x \in P(A)$, then $x \in A$ by definition of powerset.
+        First prove that $ x \subseteq C$. Let $y \in x$; we must prove $y \in C$.
+        Then since $x \subseteq A$ we have $y \in A$. Then since $A \subseteq C$, we have $y \in C$.
+        So we have proven $x \subset C$, then by def. of powerset, $x \in P(C)$
+        \\
+        \subsubsection*{Kernel properties:}
+        \begin{itemize}[noitemsep]
+            \item Any node from the kernel can’t have as successor (if it exists) a node from the kernel
+            \item Every node out of the kernel has at least one successor, and among them a node of the kernel
+        \end{itemize}
+        \subsubsection*{Permutations}
+        $C(n,r) = \frac{P(n,r)}{r!} = \frac{n!}{r!(n-r)!}$ \\
+        \begin{tabular}{|l|l|}
+            \hline
+            What?                     & How many?            \\ \hline
+            Ordered lists of length R & n\textasciicircum{}r \\ \hline
+            Permutation of length R   & P(n,r)               \\ \hline
+            Unordered Lists of Size R & C(n+r-1,r)           \\ \hline
+            Sets of size R            & C(n,r)               \\ \hline
+        \end{tabular}
+        \subsubsection*{Bernouli Trial}
+        $C(n,k) \cdot p^k \cdot (1-p)^{n-k}$ \\
+        \begin{tabular}{llll}
+            &                          & Does order matter?                &                                     \\ \cline{2-4}
+            \multicolumn{1}{l|}{Are repetitions allowed?} & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{yes}          & \multicolumn{1}{l|}{No}             \\ \cline{2-4}
+            \multicolumn{1}{l|}{}                         & \multicolumn{1}{l|}{yes} & \multicolumn{1}{l|}{Ordered List} & \multicolumn{1}{l|}{Unordered list} \\ \cline{2-4}
+            \multicolumn{1}{l|}{}                         & \multicolumn{1}{l|}{no}  & \multicolumn{1}{l|}{Permutation}  & \multicolumn{1}{l|}{List}           \\ \cline{2-4}
+        \end{tabular}
+        \switchcolumn
+        \begin{itemize}[noitemsep]
+            \item (8 points) In this problem, we are attempting to form a curriculum committee for a School
+            of Computing. This School of Computing has 10 junior professors, 15 middle professors, and
+            5 senior professors, and we want to form a committee of five.
+            \item  (a) (2 points) How many different committees can be formed?
+            \\ We have 30 total faculty and we must choose 5, so C(30, 5).
+            \item (b) (2 points) The committee must have a chairperson, who must be a senior professor.
+            How many different committees are possible?
+            \\ There are 5 choices for chairperson, and we must pick 4 faculty from among the other
+            29 options, so 5 ·C(29, 4).
+            \item  (c) (2 points) The other members of the committee shouldn’t all be junior professors. How
+            many different committees are possible now?
+           \\  From the 5 $\cdot$C(29, 4) options above, we need to subtract all the ones with 4 junior pro-
+            fessors, which is 5 $\cdot$C(10, 4), so we have 5 $\cdot$(C(29, 4) -C(10, 4)).
+            (d) (2 points) What if the committee must have at least one junior professor, at least one
+            middle professor, and at least one senior professor? (The senior professor can be the
+            chairperson.)
+            There are still 5 $\cdot$C(29, 4) options with just a senior chairperson. Let’s subtract all the
+            ones that either don’t have any junior professors or don’t have any middle professors. We
+            need to use the rule of sums with overlap, because committees with only senior professors
+            are in both.
+            There are 5 $\cdot$C(19, 4) committees without junior professors. There are 5 $\cdot$C(14, 4) without
+            middle professors. There are 5 $\cdot$ C(4, 4) committees without either. So we have 5 $\cdot$
+            (C(29, 4) -C(19, 4) -C(14, 4) + 1).
+        \end{itemize}
+        We say that an integer a is the largest
+        divisor of b if a divides b and if all positive divisors of b that are smaller than b are
+        smaller than or equal to a. \\
+        Predicate logic: $a | b \wedge \forall c \in \mathbb{Z},c > 0\wedge c < b \wedge c | b \rightarrow c \leq a$
+        \newline
+        \newline
+        \switchcolumn
+        \begin{itemize}[noitemsep]
+            \item Prove the following by induction over the number of edges. Every simple,
+            undirected graph has an even number of odd-degree nodes.
+            \item  (2 points) Write down, in English, the property P (n) that you will prove by in-
+            duction.
+            P (n) = every simple, undirected graph with n edges has an even number of odd-degree
+            nodes
+            \item  (2 points) Write down the base case for the induction, without using P , and prove
+            it.
+            P (0) states that every simple, undirected graph with zero edges has an even number
+            of odd-degree nodes. Since the graph has no edges, every node has no edges incident
+            on it. Therefore each node has degree 0. Therefore there are zero nodes with odd
+            degree. Zero is an even number.
+            \item  (2 points) Write down the step case for the induction, without using P . Don’t
+            prove it yet.
+            If any simple, undirected graph with n edges has an even number of odd-degree nodes
+            then any simple, undirected graph with n+1 edges has an even number of odd-degree
+            nodes.
+            \item  (8 points) Prove the step case.
+            Let G be a simple, undirected graph with n + 1 edges. Pick any edge e = {x, y} and
+            form a graph G` from G by removing e.
+            Since G` has one fewer edge than G, it has n edges. Therefore by the induction
+            hypothesis it has an even number of odd-degree nodes.
+            The degree of every node except x and y is the same in G and G` . The degrees of x
+            and y are one higher in G than in G` . There are three cases: neither x nor y have
+            odd degree in G` ; one of them does; or both. Consider each case separately.
+            \item  If neither x nor y have odd degree, then since G` has an even number of odd-
+            degree nodes, there are an even number of odd-degree nodes other than x and
+            y. And x and y have even degree in G, so there are in total an even number of
+            odd-degree nodes in G.
+            \item  If one of x and y have odd degree, then since G` has an even number of odd-
+            degree nodes, there are an odd number of odd-degree nodes other than x and y.
+            And exactly one of x and y has odd degree in G, so there are in total an even
+            number of odd-degree nodes in G.
+            \item  If both of x and y have odd degree, then since G` has an even number of odd-
+            degree nodes, there are an even number of odd-degree nodes other than x and y.
+            And neither x nor y has odd degree in G, so there are in total an even number
+            of odd-degree nodes in G.
+        \end{itemize}
+    \end{paracol}
+\end{document}
